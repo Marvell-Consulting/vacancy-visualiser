@@ -13,7 +13,7 @@ module.exports = config => {
       mapbox: {
         key: config.mapbox.key
       }
-    }
+    };
     res.send(`window.config=${JSON.stringify(clientConfig)}`);
   });
   app.set('view engine', 'jsx');
@@ -24,8 +24,6 @@ module.exports = config => {
   app.engine('jsx', expressViews.createEngine({
     transformViews: false
   }));
-
-
 
   app.use((req, res, next) => {
     if (req.path !== '/') {
