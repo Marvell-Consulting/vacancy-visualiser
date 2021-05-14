@@ -1,35 +1,35 @@
-import React, { Fragment, useRef, useEffect, useState, useContext } from 'react';
+import React, { Fragment, useRef, useEffect, useContext } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { State } from '../state';
 
 const Map = () => {
 
   const mapContainer = useRef(null);
-  const map = useRef(null);
+  const mapElement = useRef(null);
 
   const { state, actions } = useContext(State);
-  const { mapbox } = state;
+  const { config, map } = state;
 
   useEffect(() => {
-    mapboxgl.accessToken = mapbox.key;
-    map.current = new mapboxgl.Map({
+    mapboxgl.accessToken = config.mapbox.key;
+    mapElement.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [mapbox.lng, mapbox.lat],
-      zoom: mapbox.zoom
+      center: [map.lng, map.lat],
+      zoom: map.zoom
     });
   }, []);
 
   useEffect(() => {
-    if (!map.current) return;
-    map.current.on('move', () => {
+    if (!mapElement.current) return;
+    mapElement.current.on('move', () => {
       const position = {
-        ...map.current.getCenter(),
-        zoom: map.current.getZoom()
+        ...mapElement.current.getCenter(),
+        zoom: mapElement.current.getZoom()
       };
       actions.map.move(position);
     });
-  }, [map]);
+  }, [mapElement]);
 
   return <Fragment>
     <div ref={mapContainer} className="map-container" />

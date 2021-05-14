@@ -18,8 +18,12 @@ module.exports = config => {
 
   app.get('/initial-state', (req, res) => {
     const initialState = {
-      mapbox: {
-        key: config.mapbox.key,
+      config: {
+        mapbox: {
+          key: config.mapbox.key
+        }
+      },
+      map: {
         lat: 51.5101,
         lng: -0.3055,
         zoom: 11

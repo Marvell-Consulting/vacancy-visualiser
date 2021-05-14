@@ -7,13 +7,11 @@ const reducer = (state, action) => {
     case 'MOVE_MAP':
       return {
         ...state,
-        mapbox: {
-          ...state.mapbox,
+        map: {
           ...action.position
         }
       };
   }
-
   return state;
 };
 
@@ -32,7 +30,8 @@ const StateWrapper = ({ state: initial, children }) => {
   return <Context.Provider value={{ state, actions }}>
     { children }
   </Context.Provider>;
-}
+};
+
 const State = Context.Consumer;
 
 export { StateWrapper, State };
