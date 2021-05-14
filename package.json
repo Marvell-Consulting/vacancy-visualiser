@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm run test:lint",
     "test:lint": "eslint .",
     "dev": "nodemon -r dotenv/config -e js,jsx,json",
