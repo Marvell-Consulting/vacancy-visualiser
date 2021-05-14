@@ -9,7 +9,7 @@ const Index = ({ config }) => {
     </head>
     <body>
       <div id="root"></div>
-      <script src="/public/js/config.js" />
+      <script src="/initial-state" />
       <script src="/public/js/index.js"></script>
     </body>
   </html>;
