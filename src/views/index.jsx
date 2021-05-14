@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Index = () => {
+const Index = ({ config }) => {
   return <html>
     <head>
       <link rel="stylesheet" href="https://use.typekit.net/won4sip.css" />
@@ -8,8 +8,9 @@ const Index = () => {
       <title>Vacancy Visualiser</title>
     </head>
     <body>
-      <h1>Vacancy Visualiser</h1>
-      <p>This is a placeholder page.</p>
+      <div id="root"></div>
+      <script src="/public/js/config.js" />
+      <script src="/public/js/index.js"></script>
     </body>
   </html>;
 }

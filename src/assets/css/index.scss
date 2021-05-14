@@ -2,6 +2,8 @@ $gutter: 30px;
 $body-color: #222;
 $highlight-color: #3289fb;
 
+@import "mapbox-gl/dist/mapbox-gl.css";
+
 * {
   font-family: brandon-grotesque, Helvetica, Arial, sans-serif;
 }
@@ -16,4 +18,7 @@ h1, h2, h3, h4 {
   color: $highlight-color;
   text-transform: uppercase;
   font-weight: normal;
+}
+.map-container {
+  height: 400px;
 }
