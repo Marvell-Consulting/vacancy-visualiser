@@ -1,32 +1,12 @@
 import React, { useReducer } from 'react'
+import Actions from './actions';
+import reducers from './reducers';
 
 const Context = React.createContext();
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'MOVE_MAP':
-      return {
-        ...state,
-        map: {
-          ...action.position
-        }
-      };
-  }
-  return state;
-};
-
 const StateWrapper = ({ state: initial, children }) => {
-  const [state, dispatch] = useReducer(reducer, initial);
-  const actions = {
-    map: {
-      move: (position) => {
-        return dispatch({
-          type: 'MOVE_MAP',
-          position
-        });
-      }
-    }
-  };
+  const [state, dispatch] = useReducer(reducers, initial);
+  const actions = Actions(dispatch);
   return <Context.Provider value={{ state, actions }}>
     { children }
   </Context.Provider>;
