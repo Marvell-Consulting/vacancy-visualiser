@@ -1,0 +1,19 @@
+$gutter: 30px;
+$body-color: #222;
+$highlight-color: #3289fb;
+
+* {
+  font-family: brandon-grotesque, Helvetica, Arial, sans-serif;
+}
+body {
+  color: $body-color;
+  background-color: rgb(250, 250, 250);
+  font-size: 160%;
+  margin: 0;
+  padding: $gutter 2*$gutter;
+}
+h1, h2, h3, h4 {
+  color: $highlight-color;
+  text-transform: uppercase;
+  font-weight: normal;
+}

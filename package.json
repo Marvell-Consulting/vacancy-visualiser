@@ -1,0 +1,41 @@
+{
+  "name": "vacancy-visualiser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:lint",
+    "test:lint": "eslint .",
+    "dev": "nodemon -r dotenv/config -e js,jsx,json",
+    "prebuild:css": "mkdir -p ./public/css",
+    "build:css": "npm-sass ./src/assets/css/index.scss > ./public/css/index.css",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvell-Consulting/vacancy-visualiser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marvell-Consulting/vacancy-visualiser/issues"
+  },
+  "homepage": "https://github.com/Marvell-Consulting/vacancy-visualiser#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/register": "^7.13.16",
+    "express": "^4.17.1",
+    "express-react-views": "^0.11.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.2",
+    "eslint": "^7.26.0",
+    "eslint-config-lennym": "^2.2.0",
+    "nodemon": "^2.0.7",
+    "npm-sass": "^2.3.0"
+  }
+}
